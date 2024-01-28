@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: openai-chat-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/openai
+    username: openai-db-user
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+openai:
+  api:
+    key:
+    url: https://api.openai.com/v1/chat/completions

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql-openai-db:
+    image: mysql:latest
+    container_name: mysql-openai-chat-db-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: this_is_my_safe_password
+      MYSQL_DATABASE: openai
+      MYSQL_USER: openai-db-user
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - mysql-openai-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+volumes:
+  mysql-openai-data:
+    driver: local
